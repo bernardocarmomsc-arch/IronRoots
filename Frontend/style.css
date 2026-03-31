@@ -1,0 +1,325 @@
+@import url('https://fonts.googleapis.com/css2?family=Pirata+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap');
+
+
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --green: #00ff88;
+  --green-glow: rgba(0, 255, 136, 0.35);
+  --bg-main: #050505;
+  --bg-soft: #0b0b0b;
+  --text-main: #eaeaea;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', Arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+  opacity: 0.15;
+  pointer-events: none;
+  z-index: -1;
+}
+header {
+  padding: 50px 20px 30px;
+  text-align: center;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+.logo-img {
+  width: 72px;
+  height: auto;
+  filter: drop-shadow(0 0 10px rgba(0, 255, 136, 0.35));
+}
+
+@media (max-width: 768px) {
+  .brand {
+    flex-direction: column;
+  }
+
+  .logo-text {
+    font-size: 2.2rem;
+  }
+
+  .logo-img {
+    width: 60px;
+  }
+}
+.logo {
+  font-family: 'Pirata One', serif;
+  font-size: 3.2rem;
+  color: var(--green);
+  letter-spacing: 3px;
+  text-shadow: 0 0 18px var(--green-glow);
+  animation: fadeGlow 1.5s ease forwards;
+}
+
+.tagline {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  opacity: 0.8;
+}
+
+header p {
+  margin-top: 12px;
+  font-size: 1rem;
+  opacity: 0.85;
+}
+nav {
+  background: linear-gradient(to right, #000, var(--bg-soft), #000);
+  border-top: 1px solid var(--green-glow);
+  border-bottom: 1px solid var(--green-glow);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  gap: 34px;
+  list-style: none;
+  padding: 16px 0;
+}
+
+nav a {
+  color: var(--green);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  transition: 0.25s ease;
+}
+section {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+nav a:hover {
+  text-shadow: 0 0 10px var(--green);
+  transform: translateY(-1px);
+}
+section {
+  max-width: 900px;
+  margin: 90px auto;
+  padding: 0 20px;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+section h2 {
+  font-family: 'Pirata One', serif;
+  font-size: 2.1rem;
+  color: var(--green);
+  margin-bottom: 24px;
+  padding-left: 16px;
+  border-left: 4px solid var(--green);
+  letter-spacing: 1px;
+  text-shadow: 0 0 12px var(--green-glow);
+}
+
+section p {
+  margin-bottom: 20px;
+  opacity: 0.9;
+}
+a {
+  color: var(--green);
+}
+
+a:hover {
+  text-shadow: 0 0 8px var(--green);
+}
+footer {
+  text-align: center;
+  padding: 50px 20px;
+  font-size: 0.8rem;
+  opacity: 0.6;
+  border-top: 1px solid var(--green-glow);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeGlow {
+  from {
+    opacity: 0;
+    text-shadow: none;
+  }
+  to {
+    opacity: 1;
+    text-shadow: 0 0 18px var(--green-glow);
+  }
+}
+
+/*responsivo*/
+@media (max-width: 768px) {
+  .logo {
+    font-size: 2.3rem;
+  }
+
+  nav ul {
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  section {
+    margin: 65px auto;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+input {
+  background-color: #000;
+  border: 1px solid var(--green-glow);
+  border-radius: 10px;
+  padding: 12px 14px;
+  color: var(--text-main);
+  font-size: 0.9rem;
+}
+
+input:focus {
+  outline: none;
+  box-shadow: 0 0 10px var(--green-glow);
+}
+
+button {
+  margin-top: 16px;
+  background-color: transparent;
+  border: 1px solid var(--green);
+  color: var(--green);
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--green);
+  color: #000;
+  box-shadow: 0 0 18px var(--green-glow);
+}
+
+nav a {
+  position: relative;
+}
+
+/* loja */
+
+.loja {
+  background: #050505;
+  overflow: hidden;
+}
+
+.carrousel-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  gap: 24px;
+
+  overflow-x: auto;
+  overflow-y: hidden;
+
+  scroll-behavior: smooth;
+  padding: 20px;
+
+  /* esconde scrollbar */
+  scrollbar-width: none;
+}
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+.product-card {
+  width: 240px;
+  height: auto;
+
+  background: radial-gradient(
+    circle at top,
+    #0a0a0a,
+    #000
+  );
+
+  border: 1px solid rgba(0, 255, 136, 0.35);
+  border-radius: 14px;
+
+  padding: 22px 18px;
+  text-align: center;
+
+  box-shadow:
+    0 0 0 transparent,
+    inset 0 0 0 transparent;
+
+  transition: all 0.35s ease;
+}
+.productp-card:hover {
+  transform: translateY(-6px) scale(1.02);
+
+  box-shadow:
+    0 0 22px rgba(0, 255, 136, 0.25),
+    inset 0 0 18px rgba(0, 255, 136, 0.08);
+
+  border-color: #00ff88;
+}
+
+.product-card img {
+  width: 100%;
+  max-width: 200px;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(0, 0, 0, 0.9));
+}
+.product-card p {
+  margin-top: 10px;
+
+  font-family: "Pirate One", serif; /* ou a fonte do site */
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+
+  color: #00ff88;
+
+  text-shadow:
+    0 0 6px rgba(0, 255, 136, 0.5),
+    0 0 12px rgba(0, 255, 136, 0.2);
+}
+
+.rogerio-penis{
+  font-family: "Pirate One", serif; /* ou a fonte do site */
+  font-size: 0.95rem;
+  letter-spacing: 0.12em;
+}
